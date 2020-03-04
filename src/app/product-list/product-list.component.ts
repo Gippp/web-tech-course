@@ -13,7 +13,11 @@ export class ProductListComponent implements OnInit {
   share() {
     window.alert('Вы поделились товаром!!');
   }
-
+  
+  onNotify() {
+    window.alert('You will be notified when the product goes on sale');
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
