@@ -1,4 +1,4 @@
-export const products = [
+export var products = [
   {
     name: 'Духи от Павла(не скажу какого)',
     price: 200,
