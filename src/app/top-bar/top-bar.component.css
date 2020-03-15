@@ -1,0 +1,9 @@
+A {
+    color: black; /* Цвет ссылок */
+   }
+   A:visited {
+    color: #black; /* Цвет посещенных ссылок */
+   }
+   A:active {
+    color: #black; /* Цвет активных ссылок */
+   }

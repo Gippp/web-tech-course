@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CartService } from '../cart.service';
 import { products } from '../products';
+import {Product} from '.././product';
+import { HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-product-list',
@@ -8,19 +10,18 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products = products;
-
-  share() {
-    window.alert('Вы поделились товаром!!');
-  }
+  //products = products;
+  products: Product;
   
-  onNotify() {
-    window.alert('You will be notified when the product goes on sale');
+  constructor(private cartService: CartService,private http: HttpClient) { };
+  addToCart(product) {
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
   }
-  
-  constructor() { }
 
   ngOnInit(): void {
+    this.http.get('127.0.0.1:8000/api/products/').subscribe((data:Product) => this.products=data);
+    //this.http.get('http://127.0.0.1:8000/api/products/').subscribe(response => console.log(response);
   }
 
 }

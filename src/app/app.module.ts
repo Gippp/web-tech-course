@@ -8,6 +8,8 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { AdminComponent } from './admin/admin.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { HttpClientModule }   from '@angular/common/http';
 
 
 const appRoutes: Routes =[
@@ -23,11 +25,13 @@ const appRoutes: Routes =[
     ProductAlertsComponent,
     ProductDetailsComponent,
     CartComponent,
-    AdminComponent
+    AdminComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
