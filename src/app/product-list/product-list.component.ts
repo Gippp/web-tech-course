@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get('127.0.0.1:8000/api/products/').subscribe((data:Product) => this.products=data);
+    this.http.get('http://127.0.0.1:8000/api/products/').subscribe((data:Product) => this.products=data);
     //this.http.get('http://127.0.0.1:8000/api/products/').subscribe(response => console.log(response);
   }
 
